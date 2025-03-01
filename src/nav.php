@@ -1,5 +1,5 @@
 <!-- nav.php -->
-<nav class="navbar">
+<nav class="navbar madimi-one-regular">
   <div class="container">
     <!-- Logo Section -->
     <div class="nav-logo">
