@@ -139,3 +139,74 @@ background-color: rgb(126,126,126);
 }
 
 /* end footer */
+
+
+/* AARON EDITS */
+/* Grid Layout for Item Cards */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+  
+  .item-card {
+    border: 1px solid #456631;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    cursor: pointer;
+    background-color: #fff;
+    transition: transform 0.2s;
+  }
+  
+  .item-card:hover {
+    transform: scale(1.02);
+  }
+  
+  .item-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.5);
+  }
+  
+  .modal-content {
+    background-color: #fffadc;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #456631;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 1rem;
+    position: relative;
+  }
+  
+  .modal-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #456631;
+    cursor: pointer;
+  }
