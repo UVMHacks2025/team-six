@@ -18,28 +18,6 @@
 
     <?php 
 
-        // $food_type = 'Canned Beans';  // Set food type
-
-        // // Use a placeholder for the food type
-        // $sql = "SELECT quantity FROM items WHERE food_type = :food_type";
-        // $stmt = $pdo->prepare($sql);
-
-        // // Bind the food_type parameter to the prepared statement
-        // $stmt->bindParam(':food_type', $food_type, PDO::PARAM_STR);
-
-        // // Execute the statement
-        // $stmt->execute();
-
-        // // Fetch the first row
-        // $item = $stmt->fetch();
-
-
-        // if ($item) {
-        //     $quantity = $item['quantity'];
-        // } else {
-        //     $quantity = 0;  // If no item is found, set quantity to 0
-        // }
-
 
         $sql = "SELECT food_type, quantity FROM items";
         $stmt = $pdo->prepare($sql);
@@ -61,19 +39,19 @@
     
 
 <script>
-    const ctx = document.getElementById('Item_Stock').getContext('2d');
+    const ctx = document.getElementById('Item_Stock');
 
-    // Passing the PHP arrays into JavaScript
-    var foodNames = <?php echo json_encode($food_types); ?>;  // Food types as labels
-    var quantities = <?php echo json_encode($quantities); ?>;  // Quantities as data
+
+    var foodNames = <?php echo json_encode($food_types); ?>; 
+    var quantities = <?php echo json_encode($quantities); ?>; 
 
     new Chart(ctx, {
         type: 'bar',
         data: {
-            labels: foodNames,  // Food types (x-axis labels)
+            labels: foodNames, 
             datasets: [{
                 label: '# in stock',
-                data: quantities,   // Quantities (y-axis data)
+                data: quantities,
                 borderWidth: 1
             }]
         },
@@ -87,29 +65,7 @@
     });
 
 
-    
-    // // Ensure foodName is treated as a string and quantity as a number
 
-
-
-    // new Chart(ctx, {
-    //     type: 'bar',
-    //     data: {
-    //         labels: [foodName],  // Labels should be an array
-    //         datasets: [{
-    //             label: '# in stock',
-    //             data: [quantity],   // Data should be in an array
-    //             borderWidth: 1
-    //         }]
-    //     },
-    //     options: {
-    //         scales: {
-    //             y: {
-    //                 beginAtZero: true
-    //             }
-    //         }
-    //     }
-    // });
 </script>
 
 
