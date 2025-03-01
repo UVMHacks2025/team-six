@@ -12,10 +12,7 @@
       <li><a href="index.php">Home</a></li>
       <?php
           if (isset($_SESSION['username'])) {
-              // Check if the user's role is 'Admin'
-              if ($_SESSION['role'] === 'Admin') {
-                  echo '<li><a href="portal.php">Admin Portal</a></li>';
-              }
+              echo '<li><a href="logs.php">Logs</a></li>';
               echo '<li><a href="logout.php">Logout</a></li>';
           } else {
               echo '<li><a href="login.php">Login</a></li>';
