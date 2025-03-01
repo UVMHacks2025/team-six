@@ -1,10 +1,10 @@
 <!-- nav.php -->
-<nav class="navbar">
+<nav class="navbar madimi-one-regular">
   <div class="container">
     <!-- Logo Section -->
     <div class="nav-logo">
       <a href="index.php">
-        <img src="images/logo.jpg" alt="Logo" class="logo-image">
+        <img src="./public/images/rallycat_final.png" alt="Logo" class="logo-image">
       </a>
     </div>
     <!-- Navigation Menu -->
