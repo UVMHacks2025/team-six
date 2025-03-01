@@ -176,3 +176,4 @@ cython_debug/
 vendor/
 
 repomix-output.txt
+package-lock.json

@@ -17,6 +17,9 @@
         <option value="Peanut Allergy">Peanut Allergy</option>
         <option value="Treenut Allergy">Treenut Allergy</option>
         <option value="Gluten Allergy">Gluten Allergy</option>
+        <option value="Vegan">Vegan</option>
+        <option value="Kosher">Kosher</option>
+        
     </select>
     </section>
     

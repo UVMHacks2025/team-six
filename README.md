@@ -3,11 +3,15 @@
 # TO RUN LOCALLY
 ```bash
 composer install
+npm install chart.js
 ```
+
+
 
 ```bash
 php -S localhost:8000 -t src/
 ```
+
 
 
 ## Description

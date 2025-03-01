@@ -25,56 +25,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 }
 ?>
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>WEB SITE NAME</title>
-    <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-</head>
+<?php include 'top.php'; ?>
 
-<body>
-    <header>
-        <h1>WEB SITE NAME</h1>
-        <h2>Register</h2>
-    </header>
+<main class="madimi-one-regular">
+  <h2>Register</h2>
+  <?php
+    if (isset($_GET['error'])) {
+      echo '<div class="panel pale-red leftbar border-red">';
+      echo '<p>' . htmlspecialchars($_GET['error']) . '</p>';
+      echo '</div>';
+    }
+    if (isset($_GET['message'])) {
+      echo '<div class="panel pale-green leftbar border-green">';
+      echo '<p>' . htmlspecialchars($_GET['message']) . '</p>';
+      echo '</div>';
+    }
+  ?>
 
-    <main>
-        <?php
-        if (isset($_GET['error'])) {
-            echo '<div class="panel pale-red leftbar border-red">';
-            echo '<p>' . htmlspecialchars($_GET['error']) . '</p>';
-            echo '</div>';
-        }
-        if (isset($_GET['message'])) {
-            echo '<div class="panel pale-green leftbar border-green">';
-            echo '<p>' . htmlspecialchars($_GET['message']) . '</p>';
-            echo '</div>';
-        }
-        ?>
+  <form method="post" action="register.php">
+    <div class="input-container">
+      <i class="fa fa-user icon" style="color:black;"></i>
+      <input class="user-input" type="text" name="username" placeholder="Username" required>
+    </div>
+    <div class="input-container">
+      <i class="fa fa-lock icon" style="color:black;"></i>
+      <input class="pass-input" type="password" name="password" placeholder="Password" required>
+    </div>
+    <button type="submit">Register</button>
+  </form>
+  <p>
+    Already have an account? <a href="login.php">Login here</a>
+  </p>
+</main>
 
-        <form method="post" action="register.php">
-            <div class="input-container">
-                <i class="fa fa-user icon" style="color:black;"></i>
-                <input class="user-input" type="text" name="username" placeholder="Username" required>
-            </div>
-            <div class="input-container">
-                <i class="fa fa-lock icon" style="color:black;"></i>
-                <input class="pass-input" type="password" name="password" placeholder="Password" required>
-            </div>
-            <button type="submit">Register</button>
-        </form>
-
-    </main>
-    <footer>
-        <p>
-            Already have an account?
-            <a href="login.php">
-                Login here
-            </a>
-        </p>
-    </footer>
-</body>
-</html>
+<?php include 'footer.php'; ?>
