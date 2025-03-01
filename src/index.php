@@ -1,6 +1,6 @@
 <!-- index.php -->
 <?php include 'top.php'; ?>
-<main>
+<main class="madimi-one-regular">
     <h2>Food Items</h2>
     <table>
         <tr>
