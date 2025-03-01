@@ -1,5 +1,5 @@
 <?php include 'top.php' ?>
-<main class="home madimi-one-regular">
+<main class="logs madimi-one-regular">
     <h2>Requests</h2>
     <table>
         <tr>
@@ -10,6 +10,10 @@
             <th>Item 2</th>
             <th>Item 3</th>
         </tr>
+        <?php
+            // $sql = "SELECT il.id AS req_id, i."
+        ?>
+        
     </table>
 </main>
 
