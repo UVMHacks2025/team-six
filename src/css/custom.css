@@ -159,6 +159,14 @@ button.formsubmit {
   color: white;
 }
 
+input.formsubmit {
+  background-color: #456631;
+  color: white;
+  width: 40%;
+  border-radius: 1rem;
+}
+
+
 button[type="submit"]:hover {
   background-color: rgb(126, 126, 126);
   color: #fff;
