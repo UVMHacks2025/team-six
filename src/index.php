@@ -1,7 +1,6 @@
 <?php include 'top.php'; ?>
 <main class="home madimi-one-regular">
   <h1>Rally Cat's Cupboard</h1>
-  <h2 class="montserrat-regular">Add New Food Item</h2>
 
   <!-- Add New Food Item Form (only if logged in) -->
   <?php if (isset($_SESSION['username'])) { ?>
@@ -106,10 +105,12 @@
   foreach ($items as $item) {
     // Determine CSS class based on quantity
     $class = "";
-    if ($item['quantity'] == 0) {
-        $class = "red";
-    } elseif ($item['quantity'] <= $item['low_item_alert']) {
-        $class = "yellow";
+    if (isset($_SESSION['username'])) {
+        if ($item['quantity'] == 0) {
+            $class = "red";
+        } elseif ($item['quantity'] <= $item['low_item_alert']) {
+            $class = "yellow";
+        }
     }
     // Pass entire item data via a data attribute (encoded as JSON)
     $itemData = htmlspecialchars(json_encode($item), ENT_QUOTES, 'UTF-8');
