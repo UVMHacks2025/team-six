@@ -1,8 +1,41 @@
-html{
-  background-color: #456631;
+/* =====================================================
+   Global Styles & Reset
+===================================================== */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-button{
+html {
+  background-color: #456631;
+  font-size: 16px;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  color: #456631;
+  line-height: 1.6;
+}
+
+/* =====================================================
+   Typography
+===================================================== */
+.madimi-one-regular {
+  font-family: "Madimi One", serif;
+  font-weight: 400;
+}
+
+.montserrat-regular {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+/* =====================================================
+   Buttons
+===================================================== */
+button,
+input[type="submit"] {
   width: 100%;
   background-color: #456631;
   color: #fffadc;
@@ -11,268 +44,109 @@ button{
   border-radius: 4px;
   font-size: 18px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top:1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-top: 1rem;
 }
 
-
-button:hover {
+button:hover,
+input[type="submit"]:hover {
   background-color: rgb(126,126,126);
   color: #fff;
 }
 
-
-.madimi-one-regular {
-  font-family: "Madimi One", serif;
-  font-weight: 400;
-  font-style: normal;
-}
-  
-.montserrat-regular {
-  font-family: "Montserrat", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-}
-
-/* home page */
-.home{
+/* =====================================================
+   Layout Containers
+===================================================== */
+.home,
+main.logs {
   background-color: #fffadc;
   color: #456631;
   padding: 2rem;
   border-radius: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem auto;
+  max-width: 1200px;
 }
-/* end home page */
 
-/* navbar */
+/* =====================================================
+   Navbar
+===================================================== */
 .navbar {
-background-color: #fffadc;
-color: #456631;
-padding: 2rem;
-border-radius: 2rem;
-margin-top: 2rem;
-margin-bottom: 2rem;
-position: relative;
-padding-left: 20px; 
+  background-color: #fffadc;
+  color: #456631;
+  padding: 2rem;
+  border-radius: 2rem;
+  margin: 2rem auto;
+  position: relative;
+  padding-left: 20px;
 }
 
 .nav-logo {
-position: absolute;
-left: 5%;
-top: 50%;
-transform: translateY(-50%);
+  position: absolute;
+  left: 5%;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .navbar .container {
-max-width: 1200px;
-margin: 0 auto;
-padding: 0 20px;
-display: flex;
-justify-content: space-between;
-align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-
 .nav-logo img {
-height: 100px;
+  height: 100px;
 }
 
 .nav-menu {
-list-style: none;
-margin: 0;
-padding: 0;
-display: flex;
-margin-left: auto;
+  list-style: none;
+  display: flex;
+  margin-left: auto;
 }
 
 .nav-menu li {
-margin-left: 20px;
-
+  margin-left: 20px;
 }
 
 .nav-menu li a {
-text-decoration: none;
-color: #456631;
-font-size: 32px;
-transition: color 0.3s ease;
+  text-decoration: none;
+  color: #456631;
+  font-size: 32px;
+  transition: color 0.3s ease;
 }
 
 .nav-menu li a:hover {
-color:rgb(126, 126, 126);
+  color: rgb(126,126,126);
 }
 
-/* end navbar */
-
-/* About */
-textarea[name="content"]{
-width: 20em;
-height: 5em;
-}
-#formsubmit{
-background: #456631;
-font-weight: bold;
-color: #fffadc;
-max-width: 20em;
-border-radius: 1em
-}
-/* end About */
-
-/* logs */
-main.logs{
-  background-color: #fffadc;
-  color: #456631;
-  padding: 2rem;
-  border-radius: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-}
-/* end logs */
-
-/* login */
-
+/* =====================================================
+   Forms & Input Containers
+===================================================== */
 .input-container {
-position: relative;
-margin-bottom: 15px;
+  position: relative;
+  margin-bottom: 15px;
 }
 
 .input-container i.icon {
-position: absolute;
-top: 50%;
-left: 10px;
-transform: translateY(-50%);
-color: #456631;
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #456631;
 }
 
 .user-input,
 .pass-input {
-width: 100%;
-padding: 10px 10px 10px 40px; 
-border: 1px solid #456631;
-border-radius: 4px;
-font-size: 16px;
-box-sizing: border-box;
-}
-
-button[type="submit"] {
-width: 100%;
-background-color: #fffadc;
-color: #456631;
-padding: 10px;
-border: none;
-border-radius: 4px;
-font-size: 18px;
-cursor: pointer;
-transition: background-color 0.3s ease;
-margin-top:1rem;
-}
-
-button[type="submit"]:hover {
-background-color: rgb(126,126,126);
-color: #fff;
-}
-
-/* end login*/
-
-/* footer */
-
-.footer{
-  background-color: #fffadc;
-  color: #456631;
-  padding: 2rem;
-  border-radius: 2rem;
-  margin-top: 2rem;
-}
-
-/* end footer */
-
-
-/* AARON EDITS */
-/* Grid Layout for Item Cards */
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.item-card {
+  width: 100%;
+  padding: 10px 10px 10px 40px;
   border: 1px solid #456631;
-  border-radius: 1rem;
-  padding: 1rem;
-  text-align: center;
-  cursor: pointer;
-  background-color: #fff;
-  transition: transform 0.2s;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
-.item-card:hover {
-  transform: scale(1.02);
-}
-
-.item-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-}
-
-.red {
-  background-color: red !important;
-}
-
-.yellow {
-  background-color: yellow !important;
-}
-
-/* Modal Styles */
-.modal {
-  display: none; 
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-  background-color: #fffadc;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #456631;
-  width: 80%;
-  max-width: 500px;
-  border-radius: 1rem;
-  position: relative;
-}
-
-.modal-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.close {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 28px;
-  font-weight: bold;
-  color: #456631;
-  cursor: pointer;
-}
-
-.graph {
-background-color: #fffadc;
-border-radius: 2rem;
-margin: 2rem;
-padding: 2rem;
-}
-
+/* Additional styling for new entry form */
 .new-entry-section {
   margin: 20px;
   padding: 20px;
@@ -287,6 +161,7 @@ padding: 2rem;
   font-size: 24px;
 }
 
+/* Grid Form Layout */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -321,42 +196,154 @@ padding: 2rem;
   grid-column: span 2;
 }
 
+/* =====================================================
+   Data Display Sections
+===================================================== */
 .food-items-section {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-title {
+  font-size: 2em;
+  margin-bottom: 1em;
+  text-align: center;
+}
+
+/* Search Filters */
+.search-filters {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-selects {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filter-select {
+  flex: 1;
+  padding: 10px;
+  font-size: 1em;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* =====================================================
+   Grid Layout for Item Cards
+===================================================== */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.item-card {
+  border: 1px solid #456631;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  transition: transform 0.2s ease;
+}
+
+.item-card:hover {
+  transform: scale(1.02);
+}
+
+.item-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Conditional coloring for stock levels (only applied when logged in) */
+.red {
+  background-color: red !important;
+}
+
+.yellow {
+  background-color: yellow !important;
+}
+
+/* =====================================================
+   Modal Styles
+===================================================== */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fffadc;
+  margin: 10% auto;
+  padding: 20px;
+  border: 1px solid #456631;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.modal-content img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #456631;
+  cursor: pointer;
+}
+
+/* =====================================================
+   Graph & Analytics Section
+===================================================== */
+.graph {
+  background-color: #fffadc;
+  border-radius: 2rem;
+  margin: 2rem;
+  padding: 2rem;
+}
+
+/* =====================================================
+   Responsive Adjustments (if needed)
+===================================================== */
+/* You can add additional media queries below to adjust spacing/fonts for smaller screens */
+
+@media (max-width: 600px) {
+  .nav-menu li a {
+    font-size: 24px;
   }
-  
+
+  .new-entry-form h2,
   .section-title {
-    font-size: 2em;
-    margin-bottom: 1em;
-    text-align: center;
+    font-size: 1.5em;
   }
-  
-  .search-filters {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  .search-input {
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .filter-selects {
-    display: flex;
-    gap: 10px;
-    flex-wrap: wrap;
-  }
-  
-  .filter-select {
-    flex: 1;
-    padding: 10px;
-    font-size: 1em;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
+}
