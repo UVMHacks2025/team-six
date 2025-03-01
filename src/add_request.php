@@ -13,4 +13,5 @@ $sql = "INSERT INTO requests (name, email, item1, item2, item3)
         VALUES (?, ?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);
 $stmt->execute([$name, $email, $item1, $item2, $item3]);
+header("Location: make_request.php");
 ?>
