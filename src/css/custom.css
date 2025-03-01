@@ -210,3 +210,7 @@ background-color: rgb(126,126,126);
     color: #456631;
     cursor: pointer;
   }
+
+#Item_Stock {
+  background-color: #fffadc;
+}
