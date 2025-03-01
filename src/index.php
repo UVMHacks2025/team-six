@@ -22,6 +22,58 @@
         
     </select>
     </section>
+    
+    <section>
+        <?php
+        // Assuming session_start() is called in top.php
+        if (isset($_SESSION['username'])) {
+        ?>
+        <h3>Add New Food Item</h3>
+        <table>
+            <form action="add_item.php" id="newItem" method="POST">
+            <tr class="addData">
+                <th colspan="6" class="spanTwoMobile">New Entry</th>
+            </tr>
+            <tr class="addData">
+                <th>Food Type</th>
+                <th>Quantity</th>
+                <th>Expiration Date</th>
+                <th>Location</th>
+                <th>Allergies</th>
+                <th>Dietary Considerations</th>
+            </tr>
+            <tr class="addData">
+                <td>
+                <input type="text" id="food_type" name="food_type" placeholder="e.g., Canned Beans" required>
+                </td>
+                <td>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+                </td>
+                <td>
+                <input type="date" id="exp_date" name="exp_date" required>
+                </td>
+                <td>
+                <input type="text" id="location" name="location" placeholder="e.g., Aisle 1" required>
+                </td>
+                <td>
+                <input type="text" id="allergies" name="allergies" placeholder="e.g., None">
+                </td>
+                <td>
+                <input type="text" id="dietary_considerations" name="dietary_considerations" placeholder="e.g., Vegan">
+                </td>
+            </tr>
+            <tr class="addData">
+                <td colspan="6" class="spanTwoMobile">
+                <input type="submit" value="Add Item">
+                </td>
+            </tr>
+            </form>
+        </table>
+        <!-- closing bracket for if statement -->
+        <?php
+        }
+        ?>
+    </section>
 
     <section class = "table">
     <table>
@@ -51,55 +103,5 @@
         ?>
     </table>
     </section>
-
-    <?php
-    // Assuming session_start() is called in top.php
-    if (isset($_SESSION['username'])) {
-    ?>
-    <h3>Add New Food Item</h3>
-    <table>
-        <form action="add_item.php" id="newItem" method="POST">
-        <tr class="addData">
-            <th colspan="6" class="spanTwoMobile">New Entry</th>
-        </tr>
-        <tr class="addData">
-            <th>Food Type</th>
-            <th>Quantity</th>
-            <th>Expiration Date</th>
-            <th>Location</th>
-            <th>Allergies</th>
-            <th>Dietary Considerations</th>
-        </tr>
-        <tr class="addData">
-            <td>
-            <input type="text" id="food_type" name="food_type" placeholder="e.g., Canned Beans" required>
-            </td>
-            <td>
-            <input type="number" id="quantity" name="quantity" min="1" required>
-            </td>
-            <td>
-            <input type="date" id="exp_date" name="exp_date" required>
-            </td>
-            <td>
-            <input type="text" id="location" name="location" placeholder="e.g., Aisle 1" required>
-            </td>
-            <td>
-            <input type="text" id="allergies" name="allergies" placeholder="e.g., None">
-            </td>
-            <td>
-            <input type="text" id="dietary_considerations" name="dietary_considerations" placeholder="e.g., Vegan">
-            </td>
-        </tr>
-        <tr class="addData">
-            <td colspan="6" class="spanTwoMobile">
-            <input type="submit" value="Add Item">
-            </td>
-        </tr>
-        </form>
-    </table>
-    <!-- closing bracket for if statement -->
-    <?php
-    }
-    ?>
 </main>
 <?php include 'footer.php'; ?>
