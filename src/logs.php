@@ -9,7 +9,7 @@ if (!isset($_SESSION['username'])) {
 <main class="logs madimi-one-regular">
     <h2>Item Logs</h2>
     <table>
-        <tr>
+        <tr class="table-rows">
             <th>Log ID</th>
             <th>Food Item</th>
             <th>Action</th>
@@ -28,7 +28,7 @@ if (!isset($_SESSION['username'])) {
         $stmt->execute();
         $logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($logs as $log) {
-            echo '<tr>';
+            echo '<tr class="table-rows">';
             echo '<td>' . htmlspecialchars($log['log_id']) . '</td>';
             echo '<td>' . htmlspecialchars($log['food_type']) . '</td>';
             echo '<td>' . htmlspecialchars($log['action']) . '</td>';
