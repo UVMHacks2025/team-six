@@ -14,12 +14,14 @@ $quantity = $_POST['quantity'];
 $exp_date = $_POST['exp_date'];
 $allergies = $_POST['allergies'];
 $dietary_considerations = $_POST['dietary_considerations'];
+$image_path = $_POST['image_path'];
+$description = $_POST['description'];
 
-// Insert new item without location
-$sql = "INSERT INTO items (food_type, quantity, exp_date, allergies, dietary_considerations)
-        VALUES (?, ?, ?, ?, ?)";
+// Insert new item (including the new columns)
+$sql = "INSERT INTO items (food_type, quantity, exp_date, allergies, dietary_considerations, image_path, description)
+        VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([$food_type, $quantity, $exp_date, $allergies, $dietary_considerations]);
+$stmt->execute([$food_type, $quantity, $exp_date, $allergies, $dietary_considerations, $image_path, $description]);
 
 // Get the ID of the inserted item
 $item_id = $pdo->lastInsertId();
@@ -36,9 +38,11 @@ if (isset($_SESSION['user_id'])) {
 }
 
 // Insert a record into item_log for tracking
-$sql = "INSERT INTO item_log (item_id, action, user_id) VALUES (?, 'added', ?)";
+// Optionally, you might also want to log the snapshot of item info:
+$sql = "INSERT INTO item_log (item_id, action, user_id, food_type, image_path, description)
+        VALUES (?, 'added', ?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([$item_id, $user_id]);
+$stmt->execute([$item_id, $user_id, $food_type, $image_path, $description]);
 
 header("Location: index.php?message=" . urlencode("Item added successfully."));
 exit;
