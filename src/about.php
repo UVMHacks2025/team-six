@@ -48,7 +48,7 @@
         <form method="POST">
             <textarea name="content"><?php echo htmlspecialchars($content); ?></textarea>
             <br>
-            <button id = "formsubmit" type="submit">Save Changes</button>
+            <button class="formsubmit" type="submit">Save Changes</button>
         </form>
         <?php endif; ?>
     </div>
