@@ -3,12 +3,13 @@
     <h2>Requests</h2>
     <table>
         <tr>
-            <th>Request ID</th>
+            <th>ID</th>
             <th>Name</th>
             <th>Email</th>
             <th>Item 1</th>
             <th>Item 2</th>
             <th>Item 3</th>
+            <th>Date Made</th>
         </tr>
         <?php
             $sql = "SELECT * FROM requests";

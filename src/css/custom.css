@@ -216,11 +216,12 @@ textarea[name="content"]{
 }
 
 .red {
-  background-color: red !important;
+  color: #2e4520;
+  background-color: #d15454 !important;
 }
 
 .yellow {
-  background-color: yellow !important;
+  background-color: #ede54c !important;
 }
 
 /* Modal Styles */
@@ -373,4 +374,25 @@ textarea[name="content"]{
   .section-title {
     font-size: 1.5em;
   }
+}
+
+.logs {
+  margin: auto;
+  padding: 20px;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+
+.logs table {
+  width: 80%;
+   margin: auto;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.logs th, .logs td {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #ddd;
+  word-wrap: break-word;
 }
