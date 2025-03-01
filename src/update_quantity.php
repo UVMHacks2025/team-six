@@ -53,7 +53,6 @@ if ($action === 'add') {
 $sql = "UPDATE items SET quantity = ? WHERE id = ?";
 $stmt = $pdo->prepare($sql);
 if ($stmt->execute([$newQuantity, $item_id])) {
-    // Optionally, log the action here
     ob_clean();
     echo json_encode(['success' => true, 'newQuantity' => $newQuantity]);
 } else {
