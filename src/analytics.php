@@ -49,16 +49,6 @@
     });
 
 </script>
-
-
-    <!-- Bottom 5 -->
-
-
-
-    <!-- Dynamic Item Sell Chart -->
-
-
-
     
 </body>
 <?php include 'footer.php' ?>
