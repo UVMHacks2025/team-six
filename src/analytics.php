@@ -1,6 +1,5 @@
 <?php include 'top.php'?>
 
-    <!-- All  -->
     <div class='graph'>
     <canvas id="Item_Stock"></canvas>
     </div>
@@ -12,13 +11,12 @@
         $stmt->execute();
         $items = $stmt->fetchAll();
 
-        // Prepare arrays for food types and quantities
         $food_types = [];
         $quantities = [];
 
         foreach ($items as $item) {
-            $food_types[] = $item['food_type'];   // Food type (labels)
-            $quantities[] = $item['quantity'];    // Quantity (data)
+            $food_types[] = $item['food_type'];   
+            $quantities[] = $item['quantity'];  
         }
     ?>
 
@@ -49,6 +47,6 @@
     });
 
 </script>
-    
+
 </body>
 <?php include 'footer.php' ?>
