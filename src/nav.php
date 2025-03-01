@@ -10,18 +10,16 @@
     <!-- Navigation Menu -->
     <ul class="nav-menu">
       <li><a href="index.php">Home</a></li>
+      <li><a href="about.php">About</a></li>
       <?php
           if (isset($_SESSION['username'])) {
               echo '<li><a href="logs.php">Logs</a></li>';
-              echo '<li><a href="about.php">About</a></li>';
               echo '<li><a href="analytics.php">Analytics</a></li>';
               echo '<li><a href="view_requests.php">Requests</a></li>';
               echo '<li><a href="logout.php">Logout</a></li>';
           } else {
             echo '<li><a href="make_request.php">Make A Request</a></li>';
             echo '<li><a href="login.php">Login</a></li>';
-            echo '<li><a href="register.php">Sign Up</a></li>';
-            echo '<li><a href="about.php">About</a></li>';
           }
       ?>
     </ul>
