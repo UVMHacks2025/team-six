@@ -15,9 +15,18 @@ $stmt = $pdo->prepare($sql);
 $stmt->execute([$name, $email, $item1, $item2, $item3]);
 
 // Sending email
-$subject = "";
-$message = "";
+$subject = "Request Reciept - Rally Cat's Cupboard";
+$message = "Hi $name,\n
+Thank you for making a request at Rally Cat's Cupboard! 
+This is your submission receipt for your request at Rally Cat's Cupboard. 
+Show your receipt to a staff member upon arrival.
+\n
+Items Requested:\n
+1. $item1\n
+2. $item2\n
+3. $item3\n";
 
-mail($email, );
+
+mail($email, $subject, $message, );
 header("Location: make_request.php");
 ?>
