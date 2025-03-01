@@ -110,7 +110,7 @@
         }
         ?>
     </table>
-    -->
+
         <?php
         $sql = 'SELECT * FROM items ORDER BY exp_date ASC';
         $stmt = $pdo->prepare($sql);
@@ -124,8 +124,6 @@
             print '</div>';
         }
         ?>
-
-    </div>
     </section>
 </main>
 <?php include 'footer.php'; ?>
