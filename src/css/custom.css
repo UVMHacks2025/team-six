@@ -214,10 +214,11 @@ color: #fff;
 }
 
 .item-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-}
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
 
 .red {
   background-color: red !important;
@@ -242,7 +243,7 @@ color: #fff;
 
 .modal-content {
   background-color: #fffadc;
-  margin: 10% auto;
+  margin: 5% auto;
   padding: 20px;
   border: 1px solid #456631;
   width: 80%;
@@ -252,11 +253,11 @@ color: #fff;
 }
 
 .modal-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-}
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
 
 .close {
   position: absolute;
