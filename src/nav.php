@@ -1,35 +1,25 @@
 <!-- nav.php -->
 <nav class="navbar">
-        <div class="container">
-            <h1 class="logo"><a href="{{ url_for('index') }}"><img src="static/images/logo.jpg" alt="Logo" class="logo-image"></a></h1>
-            <div class="user-section">
-                {% if current_user.is_authenticated and current_user.AgentID > 0 %}
-                    <p class="welcome">Welcome, {{ current_user.FirstName }}!</p>
-                    <a href="{{ url_for('index') }}">Home</a>
-                    <a href="{{ url_for('add_listing') }}">Add Listing</a>
-                    <a href="{{ url_for('logout') }}">Logout</a>
-                    <a href="{{ url_for('saved_listings') }}">Saved Listings</a>
-                    <a href="{{ url_for('show_graphs') }}">View Trends</a>
-                    <a href="{{ url_for('statistics') }}">View Statistics</a>
-                {% elif current_user.is_authenticated %}
-                    <a href="{{ url_for('index') }}">Home</a>
-                    <p class="welcome">Welcome, {{ current_user.FirstName }}!</p>
-                    <a href="{{ url_for('logout') }}">Logout</a>
-                    <a href="{{ url_for('saved_listings') }}">Saved Listings</a>
-                    <a href="{{ url_for('show_graphs') }}">View Trends</a>
-                    <a href="{{ url_for('statistics') }}">View Statistics</a>
-                {% else %}
-                    <a href="{{ url_for('index') }}">Home</a>
-                    <a href="{{ url_for('login') }}">Login</a>
-                    <a href="{{ url_for('show_graphs') }}">View Trends</a>
-                    <a href="{{ url_for('statistics') }}">View Statistics</a>
-                {% endif %}
-            </div>
-        </div>
-    <?php
-    ?>
+  <div class="container">
+    <!-- Logo: Clicking it brings the user to the home page -->
+    <div class="nav-logo">
+      <a href="index.php">
+        <img src="images/logo.jpg" alt="Logo" class="logo-image">
+      </a>
+    </div>
+    <!-- Navigation Links -->
+    <ul class="nav-menu">
+      <li><a href="index.php">Home</a></li>
+      <li><a href="admin.php">Admin</a></li>
+      <?php if (isset($_SESSION['username'])): ?>
+        <li><a href="logout.php">Logout</a></li>
+      <?php else: ?>
+        <li><a href="login.php">Login</a></li>
+        <li><a href="signup.php">Sign Up</a></li>
+      <?php endif; ?>
+    </ul>
+  </div>
 </nav>
-</div>
 
 <!-- DONT DELETE
     if (isset($_SESSION['username'])) {
