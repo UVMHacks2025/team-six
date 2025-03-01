@@ -301,3 +301,43 @@ color: #fffadc;
 max-width: 20em;
 border-radius: 1em
 }
+
+.food-items-section {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .section-title {
+    font-size: 2em;
+    margin-bottom: 1em;
+    text-align: center;
+  }
+  
+  .search-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .search-input {
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .filter-selects {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+  .filter-select {
+    flex: 1;
+    padding: 10px;
+    font-size: 1em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  

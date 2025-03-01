@@ -61,24 +61,28 @@
   <hr>
   
   <!-- SEARCH SECTION: Three Controls -->
-  <h2 class="montserrat-regular">Food Items</h2>
-  <section class="search">
-    <input type="text" id="searchInput" placeholder="Search by food type...">
-    <select id="allergyFilter">
-      <option value="">No Allergies</option>
-      <option value="Milk">Milk</option>
-      <option value="Peanuts">Peanuts</option>
-      <option value="Treenuts">Treenuts</option>
-      <option value="Gluten">Gluten</option>
-    </select>
-    <select id="dietaryFilter">
-      <option value="">No Dietary Options</option>
-      <option value="Vegetarian">Vegetarian</option>
-      <option value="Vegan">Vegan</option>
-      <option value="Kosher">Kosher</option>
-      <option value="Halal">Halal</option>
-    </select>
-  </section>
+  <section class="food-items-section">
+  <h2 class="section-title montserrat-regular">Food Items</h2>
+  <div class="search-filters">
+    <input type="text" id="searchInput" class="search-input" placeholder="Search by food type...">
+    <div class="filter-selects">
+      <select id="allergyFilter" class="filter-select">
+        <option value="">No Allergies</option>
+        <option value="Milk">Milk</option>
+        <option value="Peanuts">Peanuts</option>
+        <option value="Treenuts">Treenuts</option>
+        <option value="Gluten">Gluten</option>
+      </select>
+      <select id="dietaryFilter" class="filter-select">
+        <option value="">No Dietary Options</option>
+        <option value="Vegetarian">Vegetarian</option>
+        <option value="Vegan">Vegan</option>
+        <option value="Kosher">Kosher</option>
+        <option value="Halal">Halal</option>
+      </select>
+    </div>
+  </div>
+</section>
   
   <!-- Grid of Item Cards -->
   <section class="grid-container">
