@@ -2,7 +2,7 @@
 <?php include 'top.php'; ?>
 
 <main class="madimi-one-regular">
-  <h2>Login</h2>
+  <h2 class="login-text">Login</h2>
   <?php
   if (isset($_GET['error'])) {
     echo '<div class="panel pale-red leftbar border-red">';
@@ -26,7 +26,7 @@
     </div>
     <button type="submit">Login</button>
   </form>
-  <p>
+  <p class="login-text">
     New user? <a href="register.php">Register here</a>
   </p>
 </main>
