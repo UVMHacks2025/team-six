@@ -22,7 +22,7 @@
         
     </select>
     </section>
-    
+
     <section>
         <?php
         // Assuming session_start() is called in top.php
@@ -91,7 +91,7 @@
         $stmt->execute();
         $items = $stmt->fetchAll();
         foreach ($items as $item) {
-            print '<tr class="hover">';
+            print '<tr>';
             print '<td>' . htmlspecialchars($item['food_type']) . '</td>';
             print '<td>' . htmlspecialchars($item['quantity']) . '</td>';
             print '<td>' . htmlspecialchars($item['exp_date']) . '</td>';

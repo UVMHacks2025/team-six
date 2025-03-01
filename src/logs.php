@@ -27,7 +27,7 @@ if (!isset($_SESSION['username'])) {
         $stmt->execute();
         $logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
         foreach ($logs as $log) {
-            echo '<tr class="hover">';
+            echo '<tr>';
             echo '<td>' . htmlspecialchars($log['log_id']) . '</td>';
             echo '<td>' . htmlspecialchars($log['food_type']) . '</td>';
             echo '<td>' . htmlspecialchars($log['action']) . '</td>';
