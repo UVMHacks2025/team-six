@@ -106,6 +106,10 @@
       <h2 id="modalName"></h2>
       <p id="modalDescription"></p>
       <ul id="modalDetails"></ul>
+        <div id="modalQuantityUpdate">
+            <button id="addQuantityBtn">Add Quantity</button>
+            <button id="removeQuantityBtn">Remove Quantity</button>
+        </div>
     </div>
   </div>
   
