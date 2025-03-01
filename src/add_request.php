@@ -1,7 +1,7 @@
 
 <?php
 session_start();
-include 'connect-DB.php';
+include 'connect-db.php';
 
 $name = $_POST['name'];
 $email = $_POST['email'];
