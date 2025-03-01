@@ -1,8 +1,8 @@
 <!-- index.php -->
 <?php include 'top.php'; ?>
 <main class="home madimi-one-regular">
-    <h2>Food Items</h2>
     <h1>Rally Cat's Cupboard</h1>
+    <h2>Food Items</h2>
     <!--SEARCH BAR -->
     <section class = "search">
         <input type="text" placeholder="Search..">
