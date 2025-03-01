@@ -1,5 +1,4 @@
 <?php include 'top.php'?>
-<body>
 
     <!-- All  -->
     <div class='graph'>
@@ -62,5 +61,4 @@
 
     
 </body>
-</html>
 <?php include 'footer.php' ?>
