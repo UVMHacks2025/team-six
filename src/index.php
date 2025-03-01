@@ -200,7 +200,6 @@
       });
     });
 
-    // Update event listeners for the buttons
     document.getElementById('addQuantityBtn').addEventListener('click', () => {
       const amount = parseInt(document.getElementById('quantityInput').value, 10);
       updateQuantity('add', amount);
@@ -211,7 +210,6 @@
       updateQuantity('remove', amount);
     });
 
-    // Updated function that now accepts an amount parameter
     function updateQuantity(action, amount) {
       if (!currentItem) {
         alert('No item selected.');
