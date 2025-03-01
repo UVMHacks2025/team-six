@@ -131,12 +131,14 @@
         modalName.textContent = item.food_type;
         // If a description exists, show it; otherwise leave it blank
         modalDescription.textContent = item.description ? item.description : "";
-        modalDetails.innerHTML = `
-          <li>Quantity: ${item.quantity}</li>
-          <li>Expiration Date: ${item.exp_date}</li>
-          <li>Allergies: ${item.allergies}</li>
-          <li>Dietary: ${item.dietary_considerations}</li>
-        `;
+        let detailsHTML = "";
+        <?php if (isset($_SESSION['username'])) { ?>
+          detailsHTML += `<li>Quantity: ${item.quantity}</li>`;
+        <?php } ?>
+        detailsHTML += `<li>Expiration Date: ${item.exp_date}</li>`;
+        detailsHTML += `<li>Allergies: ${item.allergies}</li>`;
+        detailsHTML += `<li>Dietary: ${item.dietary_considerations}</li>`;
+        modalDetails.innerHTML = detailsHTML;
       });
     });
   
