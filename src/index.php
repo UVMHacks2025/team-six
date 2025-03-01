@@ -76,6 +76,7 @@
     </section>
 
     <section class = "table montserrat-regular">
+    <!--
     <table>
         <tr>
             <th>Food Type</th>
@@ -85,7 +86,7 @@
             <th>Allergies</th>
             <th>Dietary Considerations</th>
         </tr>
-        <?php
+        <?php/*
         $sql = 'SELECT * FROM items ORDER BY exp_date ASC';
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
@@ -99,9 +100,25 @@
             print '<td>' . htmlspecialchars($item['allergies']) . '</td>';
             print '<td>' . htmlspecialchars($item['dietary_considerations']) . '</td>';
             print '</tr>';
-        }
+        }*/
         ?>
     </table>
+    -->
+        <?php
+        $sql = 'SELECT * FROM items ORDER BY exp_date ASC';
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $items = $stmt->fetchAll();
+        foreach ($items as $item) {
+            print '<div class = "listItem">';
+            print '<img alt =' . htmlspecialchars($item['username']) .
+            ' src="public/images/' . htmlspecialchars($items['username']) . '>';
+            print '<p class="itemName"> "' . htmlspecialchars($item['food_type']) . '"</p>';
+            print '</div>';
+        }
+        ?>
+
+    </div>
     </section>
 </main>
 <?php include 'footer.php'; ?>
