@@ -193,6 +193,14 @@ color: #fff;
   border-radius: 0.5rem;
 }
 
+.red {
+  background-color: red !important;
+}
+
+.yellow {
+  background-color: yellow !important;
+}
+
 /* Modal Styles */
 .modal {
   display: none; 

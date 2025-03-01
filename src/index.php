@@ -1,10 +1,10 @@
 <?php include 'top.php'; ?>
 <main class="home madimi-one-regular">
   <h1>Rally Cat's Cupboard</h1>
+  <h2 class="montserrat-regular">Add New Food Item</h2>
 
   <!-- Add New Food Item Form (only if logged in) -->
-  <h2 class="montserrat-regular">Add New Food Item</h2>
-  <section class="new-entry-section">
+<section class="new-entry-section">
   <?php if (isset($_SESSION['username'])) { ?>
     <form action="add_item.php" id="newItem" method="POST" class="new-entry-form" enctype="multipart/form-data">
       <h2>New Entry</h2>
@@ -44,7 +44,11 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="image_path">Image Path</label>
+          <label for="low_item_alert">Low Stock Alert Threshold</label>
+          <input type="number" id="low_item_alert" name="low_item_alert" value="10" min="1">
+        </div>
+        <div class="form-group">
+          <label for="image_file">Image</label>
           <input type="file" id="image_file" name="image_file" accept="image/*" required>
         </div>
         <div class="form-group form-group-full">
@@ -83,19 +87,33 @@
   <!-- Grid of Item Cards -->
   <section class="grid-container">
     <?php
-      $sql = 'SELECT * FROM items ORDER BY exp_date ASC';
-      $stmt = $pdo->prepare($sql);
-      $stmt->execute();
-      $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
-      foreach ($items as $item) {
-          // Pass entire item data via a data attribute (encoded as JSON)
-          $itemData = htmlspecialchars(json_encode($item), ENT_QUOTES, 'UTF-8');
-          echo '<div class="item-card" data-item=\'' . $itemData . '\'>';
-          echo '<img src="' . htmlspecialchars($item['image_path']) . '" alt="' . htmlspecialchars($item['food_type']) . '">';
-          echo '<h3>' . htmlspecialchars($item['food_type']) . '</h3>';
-          echo '</div>';
-      }
-    ?>
+      $sql = "SELECT * FROM items 
+        ORDER BY 
+          (CASE 
+              WHEN quantity = 0 THEN 0 
+              WHEN quantity <= low_item_alert THEN 1 
+              ELSE 2 
+          END),
+          exp_date ASC";
+  $stmt = $pdo->prepare($sql);
+  $stmt->execute();
+  $items = $stmt->fetchAll(PDO::FETCH_ASSOC);
+  foreach ($items as $item) {
+    // Determine CSS class based on quantity
+    $class = "";
+    if ($item['quantity'] == 0) {
+        $class = "red";
+    } elseif ($item['quantity'] <= $item['low_item_alert']) {
+        $class = "yellow";
+    }
+    // Pass entire item data via a data attribute (encoded as JSON)
+    $itemData = htmlspecialchars(json_encode($item), ENT_QUOTES, 'UTF-8');
+    echo '<div class="item-card ' . $class . '" data-item=\'' . $itemData . '\'>';
+    echo '<img src="' . htmlspecialchars($item['image_path']) . '" alt="' . htmlspecialchars($item['food_type']) . '">';
+    echo '<h3>' . htmlspecialchars($item['food_type']) . '</h3>';
+    echo '</div>';
+}
+?>
   </section>
   
   <!-- Modal for Item Details -->
