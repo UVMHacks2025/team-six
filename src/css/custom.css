@@ -216,12 +216,11 @@ textarea[name="content"]{
 }
 
 .red {
-  color: White;
+  color: #2e4520;
   background-color: #d15454 !important;
 }
 
 .yellow {
-  color: Black;
   background-color: #ede54c !important;
 }
 
