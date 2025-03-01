@@ -216,11 +216,13 @@ textarea[name="content"]{
 }
 
 .red {
-  background-color: red !important;
+  color: White;
+  background-color: #d15454 !important;
 }
 
 .yellow {
-  background-color: yellow !important;
+  color: Black;
+  background-color: #ede54c !important;
 }
 
 /* Modal Styles */
