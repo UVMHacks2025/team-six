@@ -1,5 +1,5 @@
 <?php include 'top.php'?>
-<body class="analytics">
+<body>
 
     <!-- All  -->
     <div class='graph'>

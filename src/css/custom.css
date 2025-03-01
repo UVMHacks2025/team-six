@@ -213,4 +213,8 @@ background-color: rgb(126,126,126);
 
 .graph {
   background-color: #fffadc;
+  border-radius: 2rem;
+  margin: 2rem;
+  padding: 2rem;
 }
+
