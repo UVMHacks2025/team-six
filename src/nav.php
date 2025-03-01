@@ -13,7 +13,6 @@
       <?php
           if (isset($_SESSION['username'])) {
               echo '<li><a href="logs.php">Logs</a></li>';
-              echo '<li><a href="logout.php">Logout</a></li>';
               echo '<li><a href="about.php">About</a></li>';
               echo '<li><a href="analytics.php">Analytics</a></li>';
               echo '<li><a href="view_requests.php">Requests</a></li>';

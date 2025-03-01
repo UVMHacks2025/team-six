@@ -106,10 +106,12 @@
       <h2 id="modalName"></h2>
       <p id="modalDescription"></p>
       <ul id="modalDetails"></ul>
-        <div id="modalQuantityUpdate">
-            <button id="addQuantityBtn">Add Quantity</button>
-            <button id="removeQuantityBtn">Remove Quantity</button>
-        </div>
+      <div id="modalQuantityUpdate">
+        <label for="quantityInput">Amount:</label>
+        <input type="number" id="quantityInput" value="1" min="1">
+        <button id="addQuantityBtn">Add Quantity</button>
+        <button id="removeQuantityBtn">Remove Quantity</button>
+      </div>
     </div>
   </div>
   
@@ -152,23 +154,73 @@
     const modalDetails = document.getElementById("modalDetails");
   
     // Open modal on item card click
+    let currentItem = null;
+
     document.querySelectorAll('.item-card').forEach(card => {
-      card.addEventListener('click', () => {
+    card.addEventListener('click', () => {
         let item = JSON.parse(card.getAttribute('data-item'));
+        currentItem = item; // Save item for later use
         modal.style.display = "block";
         modalImage.src = item.image_path;
         modalName.textContent = item.food_type;
         modalDescription.textContent = item.description ? item.description : "";
+        
         let detailsHTML = "";
         <?php if (isset($_SESSION['username'])) { ?>
-          detailsHTML += `<li>Quantity: ${item.quantity}</li>`;
+        detailsHTML += `<li id="quantityDisplay">Quantity: ${item.quantity}</li>`;
         <?php } ?>
         detailsHTML += `<li>Expiration Date: ${item.exp_date}</li>`;
         detailsHTML += `<li>Allergies: ${item.allergies}</li>`;
         detailsHTML += `<li>Dietary: ${item.dietary_considerations}</li>`;
         modalDetails.innerHTML = detailsHTML;
-      });
     });
+    });
+
+    // Update event listeners for the buttons
+    document.getElementById('addQuantityBtn').addEventListener('click', () => {
+    const amount = parseInt(document.getElementById('quantityInput').value, 10);
+    updateQuantity('add', amount);
+    });
+
+    document.getElementById('removeQuantityBtn').addEventListener('click', () => {
+    const amount = parseInt(document.getElementById('quantityInput').value, 10);
+    updateQuantity('remove', amount);
+    });
+
+    // Updated function that now accepts an amount parameter
+    function updateQuantity(action, amount) {
+    if (!currentItem) {
+        alert('No item selected.');
+        return;
+    }
+    
+    if (!amount || amount < 1) {
+        alert('Please enter a valid number greater than 0');
+        return;
+    }
+    
+    fetch('update_quantity.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `item_id=${encodeURIComponent(currentItem.id)}&action=${encodeURIComponent(action)}&amount=${encodeURIComponent(amount)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+        currentItem.quantity = data.newQuantity;
+        const qtyDisplay = document.getElementById('quantityDisplay');
+        if (qtyDisplay) {
+            qtyDisplay.textContent = 'Quantity: ' + data.newQuantity;
+        }
+        } else {
+        alert('Error: ' + data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Error updating quantity:', error);
+    });
+    }
+
   
     // Close modal when the close button is clicked
     document.querySelector('.close').addEventListener('click', () => {
