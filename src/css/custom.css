@@ -1,15 +1,25 @@
+html{
+    background-color: #456631;
+}
 /* home page */
 .home{
     background-color: #fffadc;
     color: #456631;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    margin-botton: 2rem;
 }
 /* end home page */
 
 /* navbar */
 .navbar {
 background-color: #fffadc;
-padding: 10px 0;
 color: #456631;
+padding: 2rem;
+border-radius: 2rem;
+margin-top: 2rem;
+margin-bottom: 2rem;
 }
 
 .madimi-one-regular {
@@ -27,9 +37,14 @@ justify-content: space-between;
 align-items: center;
 }
 
+.nav-logo {
+    margin-right: auto;
+  }
 .nav-logo img {
 height: 100px;
 }
+
+
 
 .nav-menu {
 list-style: none;
@@ -98,3 +113,15 @@ background-color: rgb(126,126,126);
 }
 
 /* end login*/
+
+/* footer */
+
+.footer{
+    background-color: #fffadc;
+    color: #456631;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+}
+
+/* end footer */
