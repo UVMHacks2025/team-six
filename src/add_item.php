@@ -14,10 +14,29 @@ $quantity = $_POST['quantity'];
 $exp_date = $_POST['exp_date'];
 $allergies = $_POST['allergies'];
 $dietary_considerations = $_POST['dietary_considerations'];
-$image_path = $_POST['image_path'];
 $description = $_POST['description'];
 
-// Insert new item (including the new columns)
+// Handle the image file upload
+$image_path = "";
+if (isset($_FILES['image_file']) && $_FILES['image_file']['error'] == UPLOAD_ERR_OK) {
+    
+    $targetDir = "./public/images/";
+    if (!is_dir($targetDir)) {
+        mkdir($targetDir, 0777, true);
+    }
+    $fileName = basename($_FILES['image_file']['name']);
+    $targetFilePath = $targetDir . $fileName;
+    
+    if (move_uploaded_file($_FILES['image_file']['tmp_name'], $targetFilePath)) {
+        $image_path = "./public/images/" . $fileName;
+    } else {
+        $image_path = "";
+    }
+} else {
+    // No file was uploaded or an error occurred
+    $image_path = "./public/images/default.png";
+}
+
 $sql = "INSERT INTO items (food_type, quantity, exp_date, allergies, dietary_considerations, image_path, description)
         VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);
@@ -37,8 +56,7 @@ if (isset($_SESSION['user_id'])) {
     $user_id = $user['id'];
 }
 
-// Insert a record into item_log for tracking
-// Optionally, you might also want to log the snapshot of item info:
+// Insert a record into item_log for tracking the addition of the item
 $sql = "INSERT INTO item_log (item_id, action, user_id, food_type, image_path, description)
         VALUES (?, 'added', ?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);

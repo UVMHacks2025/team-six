@@ -7,62 +7,62 @@
   <section>
     <?php if (isset($_SESSION['username'])) { ?>
       <table>
-        <form action="add_item.php" id="newItem" method="POST">
-          <tr class="addData">
+      <form action="add_item.php" id="newItem" method="POST" enctype="multipart/form-data">
+        <tr class="addData">
             <th colspan="7" class="spanTwoMobile">New Entry</th>
-          </tr>
-          <tr class="addData">
+        </tr>
+        <tr class="addData">
             <th>Food Type</th>
             <th>Quantity</th>
             <th>Expiration Date</th>
             <th>Allergies</th>
             <th>Dietary Considerations</th>
-            <th>Image Path</th>
+            <th>Image</th>
             <th>Description</th>
-          </tr>
-          <tr class="addData">
+        </tr>
+        <tr class="addData">
             <td>
-              <input type="text" id="food_type" name="food_type" placeholder="e.g., Canned Beans" required>
-            </td>
-            <td>
-              <input type="number" id="quantity" name="quantity" min="1" required>
+                <input type="text" id="food_type" name="food_type" placeholder="e.g., Canned Beans" required>
             </td>
             <td>
-              <input type="date" id="exp_date" name="exp_date" required>
+                <input type="number" id="quantity" name="quantity" min="1" required>
             </td>
             <td>
-              <select id="allergies" name="allergies" required>
-                <option value="">Select Allergy</option>
-                <option value="None">None</option>
-                <option value="Milk">Milk</option>
-                <option value="Peanuts">Peanuts</option>
-                <option value="Treenuts">Treenuts</option>
-                <option value="Gluten">Gluten</option>
-              </select>
+                <input type="date" id="exp_date" name="exp_date" required>
             </td>
             <td>
-              <select id="dietary_considerations" name="dietary_considerations" required>
-                <option value="">Select Dietary Option</option>
-                <option value="None">None</option>
-                <option value="Vegetarian">Vegetarian</option>
-                <option value="Vegan">Vegan</option>
-                <option value="Kosher">Kosher</option>
-                <option value="Halal">Halal</option>
-              </select>
+                <select id="allergies" name="allergies" required>
+                    <option value="">Select Allergy</option>
+                    <option value="None">None</option>
+                    <option value="Milk">Milk</option>
+                    <option value="Peanuts">Peanuts</option>
+                    <option value="Treenuts">Treenuts</option>
+                    <option value="Gluten">Gluten</option>
+                </select>
             </td>
             <td>
-              <input type="text" id="image_path" name="image_path" placeholder="Relative path (e.g., images/beans.jpg)" required>
+                <select id="dietary_considerations" name="dietary_considerations" required>
+                    <option value="">Select Dietary Option</option>
+                    <option value="None">None</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Kosher">Kosher</option>
+                    <option value="Halal">Halal</option>
+                </select>
             </td>
             <td>
-              <textarea id="description" name="description" placeholder="Item description" required></textarea>
+                <input type="file" id="image_file" name="image_file" accept="image/*" required>
             </td>
-          </tr>
-          <tr class="addData">
-            <td colspan="7" class="spanTwoMobile">
-              <input type="submit" value="Add Item">
+            <td>
+                <textarea id="description" name="description" placeholder="Item description" required></textarea>
             </td>
-          </tr>
-        </form>
+        </tr>
+        <tr class="addData">
+            <td>
+                <input type="submit" value="Add Item">
+            </td>
+        </tr>
+      </form>
       </table>
     <?php } ?>
   </section>
