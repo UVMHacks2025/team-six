@@ -130,12 +130,14 @@
       <h2 id="modalName"></h2>
       <p id="modalDescription"></p>
       <ul id="modalDetails"></ul>
-      <div id="modalQuantityUpdate">
+      <?php if (isset($_SESSION['username'])) { ?>
+        <div id="modalQuantityUpdate">
         <label for="quantityInput">Amount:</label>
         <input type="number" id="quantityInput" value="1" min="1">
         <button id="addQuantityBtn">Add Quantity</button>
         <button id="removeQuantityBtn">Remove Quantity</button>
-      </div>
+        </div>
+      <?php } ?>
     </div>
   </div>
 
