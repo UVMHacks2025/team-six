@@ -6,7 +6,7 @@
 
     
         <label for="test">Enter your name:</label>
-        <input type="text" id="name" required><br><br>
+        <input type="text" id="name" name="name" required><br><br>
         <label for="email">Enter your email:</label>
         <input type="email" id="email" name="email" required><br><br>
 
