@@ -7,10 +7,10 @@ session_start();
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>WEB SITE TITLE</title>
-        <link rel="icon" type="image/x-icon" href="images/bike.jpg">
+        <title>Rally Cat's Cupboard</title>
+        <link rel="icon" type="image/x" href="./public/images/rallycat_final_icon.png">
         <meta name="author" content="UVM Hackathon Team 6">
-        <meta name="description" content="WEB SITE DESCRIPTION">
+        <meta name="description" content="Rally Cat's Cupboard is UVM's on-campus food pantry. Located on the first floor of the Davis Center, it is run by students and available to all members of the UVM community. They receive donations from groups ranging from local grocery stores, to individual donations. ">
         
         <meta name="viewport" content="width=device-width, 
         initial-scale=1.0">
