@@ -11,8 +11,8 @@
 </head>
 <body>
 
-    <!-- Item Specific Chart -->
-    <div>
+    <!-- All  -->
+    <div class='graph'>
     <canvas id="Item_Stock"></canvas>
     </div>
 

@@ -211,6 +211,6 @@ background-color: rgb(126,126,126);
     cursor: pointer;
   }
 
-#Item_Stock {
+.graph {
   background-color: #fffadc;
 }
