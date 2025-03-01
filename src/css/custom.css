@@ -294,7 +294,7 @@ textarea[name="content"]{
 width: 20em;
 height: 5em;
 }
-button[type="submit"]{
+#formsubmit{
 background: #456631;
 font-weight: bold;
 color: #fffadc;
