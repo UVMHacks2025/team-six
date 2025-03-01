@@ -13,47 +13,60 @@
 
     <!-- Item Specific Chart -->
     <div>
-    <canvas id="Item Stock"></canvas>
+    <canvas id="Item_Stock"></canvas>
     </div>
 
     <?php 
 
-        $food_type = 'cookies';
-        $sql = "SELECT quantity FROM items WHERE food_type=$food_type";
+
+        $sql = "SELECT food_type, quantity FROM items";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $items = $stmt->fetchAll();
 
-        $quantity = $items['quantity'];
+        // Prepare arrays for food types and quantities
+        $food_types = [];
+        $quantities = [];
+
+        foreach ($items as $item) {
+            $food_types[] = $item['food_type'];   // Food type (labels)
+            $quantities[] = $item['quantity'];    // Quantity (data)
+        }
+
 
     ?>
 
     
 
-    <script>
-    const ctx = document.getElementById('Item Stock');
-    var foodName = <?php echo $food_type;?>
-    var quantity = <?php echo $quantity;?>
+<script>
+    const ctx = document.getElementById('Item_Stock');
+
+
+    var foodNames = <?php echo json_encode($food_types); ?>; 
+    var quantities = <?php echo json_encode($quantities); ?>; 
 
     new Chart(ctx, {
         type: 'bar',
         data: {
-        labels: foodName,
-        datasets: [{
-            label: '# in stock',
-            data: quantity,
-            borderWidth: 1
-        }]
+            labels: foodNames, 
+            datasets: [{
+                label: '# in stock',
+                data: quantities,
+                borderWidth: 1
+            }]
         },
         options: {
-        scales: {
-            y: {
-            beginAtZero: true
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-        }
     });
-    </script>
+
+
+
+</script>
 
 
     <!-- Bottom 5 -->
