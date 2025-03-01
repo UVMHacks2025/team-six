@@ -1,6 +1,5 @@
 <?php include 'top.php'?>
 
-    <!-- All  -->
     <div class='graph'>
     <canvas id="Item_Stock"></canvas>
     </div>
