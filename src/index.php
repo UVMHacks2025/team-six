@@ -32,13 +32,12 @@
         <table>
             <form action="add_item.php" id="newItem" method="POST">
             <tr class="addData">
-                <th colspan="6" class="spanTwoMobile">New Entry</th>
+                <th colspan="5" class="spanTwoMobile">New Entry</th>
             </tr>
             <tr class="addData">
                 <th>Food Type</th>
                 <th>Quantity</th>
                 <th>Expiration Date</th>
-                <th>Location</th>
                 <th>Allergies</th>
                 <th>Dietary Considerations</th>
             </tr>
@@ -53,17 +52,28 @@
                 <input type="date" id="exp_date" name="exp_date" required>
                 </td>
                 <td>
-                <input type="text" id="location" name="location" placeholder="e.g., Aisle 1" required>
+                <select id="allergies" name="allergies" required>
+                    <option value="">Select Allergy</option>
+                    <option value="None">None</option>
+                    <option value="Milk">Milk</option>
+                    <option value="Peanuts">Peanuts</option>
+                    <option value="Treenuts">Treenuts</option>
+                    <option value="Gluten">Gluten</option>
+                </select>
                 </td>
                 <td>
-                <input type="text" id="allergies" name="allergies" placeholder="e.g., None">
-                </td>
-                <td>
-                <input type="text" id="dietary_considerations" name="dietary_considerations" placeholder="e.g., Vegan">
+                <select id="dietary_considerations" name="dietary_considerations" required>
+                    <option value="">Select Dietary Option</option>
+                    <option value="None">None</option>
+                    <option value="Vegetarian">Vegetarian</option>
+                    <option value="Vegan">Vegan</option>
+                    <option value="Kosher">Kosher</option>
+                    <option value="Halal">Halal</option>
+                </select>
                 </td>
             </tr>
             <tr class="addData">
-                <td colspan="6" class="spanTwoMobile">
+                <td colspan="5" class="spanTwoMobile">
                 <input type="submit" value="Add Item">
                 </td>
             </tr>
@@ -76,17 +86,15 @@
     </section>
 
     <section class = "table montserrat-regular">
-    <!--
     <table>
         <tr>
             <th>Food Type</th>
             <th>Quantity</th>
             <th>Expiration Date</th>
-            <th>Location</th>
             <th>Allergies</th>
             <th>Dietary Considerations</th>
         </tr>
-        <?php/*
+        <?php
         $sql = 'SELECT * FROM items ORDER BY exp_date ASC';
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
@@ -96,27 +104,12 @@
             print '<td>' . htmlspecialchars($item['food_type']) . '</td>';
             print '<td>' . htmlspecialchars($item['quantity']) . '</td>';
             print '<td>' . htmlspecialchars($item['exp_date']) . '</td>';
-            print '<td>' . htmlspecialchars($item['location']) . '</td>';
             print '<td>' . htmlspecialchars($item['allergies']) . '</td>';
             print '<td>' . htmlspecialchars($item['dietary_considerations']) . '</td>';
             print '</tr>';
-        }*/
-        ?>
-    </table>
-    -->
-        <?php
-        $sql = 'SELECT * FROM items ORDER BY exp_date ASC';
-        $stmt = $pdo->prepare($sql);
-        $stmt->execute();
-        $items = $stmt->fetchAll();
-        foreach ($items as $item) {
-            print '<div class = "listItem">';
-            print '<img alt =' . htmlspecialchars($item['username']) .
-            ' src="public/images/' . htmlspecialchars($items['username']) . '>';
-            print '<p class="itemName"> "' . htmlspecialchars($item['food_type']) . '"</p>';
-            print '</div>';
         }
         ?>
+    </table>
 
     </div>
     </section>
