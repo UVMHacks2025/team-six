@@ -1,5 +1,15 @@
 # Team Six
 
+# TO RUN LOCALLY
+```bash
+composer install
+```
+
+```bash
+php -S localhost:8000 -t src/
+```
+
+
 ## Description
 
 Rally Cat's Cupboard is UVM's on-campus food pantry. Located on the first floor of the Davis Center, it is run by students and available to all members of the UVM community. They receive donations from groups ranging from local grocery stores, to individual donations. 

@@ -1,0 +1,17 @@
+{
+    "name": "aaronperkel/team-six",
+    "autoload": {
+        "psr-4": {
+            "Aaronperkel\\TeamSix\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "aaronperkel",
+            "email": "aaron.perkel27@gmail.com"
+        }
+    ],
+    "require": {
+        "vlucas/phpdotenv": "^5.6"
+    }
+}
