@@ -4,68 +4,59 @@
 
   <!-- Add New Food Item Form (only if logged in) -->
   <h2 class="montserrat-regular">Add New Food Item</h2>
-  <section>
-    <?php if (isset($_SESSION['username'])) { ?>
-      <table>
-      <form action="add_item.php" id="newItem" method="POST" enctype="multipart/form-data">
-        <tr class="addData">
-            <th colspan="7" class="spanTwoMobile">New Entry</th>
-        </tr>
-        <tr class="addData">
-            <th>Food Type</th>
-            <th>Quantity</th>
-            <th>Expiration Date</th>
-            <th>Allergies</th>
-            <th>Dietary Considerations</th>
-            <th>Image</th>
-            <th>Description</th>
-        </tr>
-        <tr class="addData">
-            <td>
-                <input type="text" id="food_type" name="food_type" placeholder="e.g., Canned Beans" required>
-            </td>
-            <td>
-                <input type="number" id="quantity" name="quantity" min="1" required>
-            </td>
-            <td>
-                <input type="date" id="exp_date" name="exp_date" required>
-            </td>
-            <td>
-                <select id="allergies" name="allergies" required>
-                    <option value="">Select Allergy</option>
-                    <option value="None">None</option>
-                    <option value="Milk">Milk</option>
-                    <option value="Peanuts">Peanuts</option>
-                    <option value="Treenuts">Treenuts</option>
-                    <option value="Gluten">Gluten</option>
-                </select>
-            </td>
-            <td>
-                <select id="dietary_considerations" name="dietary_considerations" required>
-                    <option value="">Select Dietary Option</option>
-                    <option value="None">None</option>
-                    <option value="Vegetarian">Vegetarian</option>
-                    <option value="Vegan">Vegan</option>
-                    <option value="Kosher">Kosher</option>
-                    <option value="Halal">Halal</option>
-                </select>
-            </td>
-            <td>
-                <input type="file" id="image_file" name="image_file" accept="image/*" required>
-            </td>
-            <td>
-                <textarea id="description" name="description" placeholder="Item description" required></textarea>
-            </td>
-        </tr>
-        <tr class="addData">
-            <td>
-                <input type="submit" value="Add Item">
-            </td>
-        </tr>
-      </form>
-      </table>
-    <?php } ?>
-  </section>
+  <section class="new-entry-section">
+  <?php if (isset($_SESSION['username'])) { ?>
+    <form action="add_item.php" id="newItem" method="POST" class="new-entry-form">
+      <h2>New Entry</h2>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="food_type">Food Type</label>
+          <input type="text" id="food_type" name="food_type" placeholder="e.g., Canned Beans" required>
+        </div>
+        <div class="form-group">
+          <label for="quantity">Quantity</label>
+          <input type="number" id="quantity" name="quantity" min="1" required>
+        </div>
+        <div class="form-group">
+          <label for="exp_date">Expiration Date</label>
+          <input type="date" id="exp_date" name="exp_date" required>
+        </div>
+        <div class="form-group">
+          <label for="allergies">Allergies</label>
+          <select id="allergies" name="allergies" required>
+            <option value="">Select Allergy</option>
+            <option value="None">None</option>
+            <option value="Milk">Milk</option>
+            <option value="Peanuts">Peanuts</option>
+            <option value="Treenuts">Treenuts</option>
+            <option value="Gluten">Gluten</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dietary_considerations">Dietary Considerations</label>
+          <select id="dietary_considerations" name="dietary_considerations" required>
+            <option value="">Select Dietary Option</option>
+            <option value="None">None</option>
+            <option value="Vegetarian">Vegetarian</option>
+            <option value="Vegan">Vegan</option>
+            <option value="Kosher">Kosher</option>
+            <option value="Halal">Halal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="image_path">Image Path</label>
+          <input type="text" id="image_path" name="image_path" placeholder="Relative path (e.g., images/beans.jpg)" required>
+        </div>
+        <div class="form-group form-group-full">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" placeholder="Item description" required></textarea>
+        </div>
+      </div>
+      <button type="submit" class="submit-btn">Add Item</button>
+    </form>
+  <?php } ?>
+</section>
+
 
   <hr>
   
@@ -115,6 +106,10 @@
       <h2 id="modalName"></h2>
       <p id="modalDescription"></p>
       <ul id="modalDetails"></ul>
+        <div id="modalQuantityUpdate">
+            <button id="addQuantityBtn">Add Quantity</button>
+            <button id="removeQuantityBtn">Remove Quantity</button>
+        </div>
     </div>
   </div>
   
