@@ -111,8 +111,8 @@
         $items = $stmt->fetchAll();
         foreach ($items as $item) {
             print '<div class = "listItem">';
-            print '<img alt =' . htmlspecialchars($item['username']) .
-            ' src="public/images/' . htmlspecialchars($items['username']) . '>';
+            print '<img alt =' . htmlspecialchars($item['food_type']) .
+            ' src="public/images/' . htmlspecialchars($item['food_type']) . '>';
             print '<p class="itemName"> "' . htmlspecialchars($item['food_type']) . '"</p>';
             print '</div>';
         }
