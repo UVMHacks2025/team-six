@@ -164,6 +164,11 @@ button[type="submit"]:hover {
   color: #fff;
 }
 
+textarea[name="content"]{
+  width: 30em;
+  height: 5em;
+}
+
 /* Footer */
 .footer {
   background-color: #fffadc;
