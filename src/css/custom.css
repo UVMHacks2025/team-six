@@ -111,14 +111,16 @@ main.logs {
 }
 
 .nav-menu li a {
-  text-decoration: none;
-  color: #456631;
-  font-size: 32px;
-  transition: color 0.3s ease;
+text-decoration: none;
+color: #456631;
+font-size: 32px;
+transition: color 0.3s ease;
+transition: font-size 0.3s ease;
 }
 
 .nav-menu li a:hover {
-  color: rgb(126,126,126);
+color:rgb(126, 126, 126);
+font-size: 2.5em;
 }
 
 /* =====================================================
@@ -139,14 +141,133 @@ main.logs {
 
 .user-input,
 .pass-input {
-  width: 100%;
-  padding: 10px 10px 10px 40px;
-  border: 1px solid #456631;
-  border-radius: 4px;
-  font-size: 16px;
+width: 100%;
+padding: 10px 10px 10px 40px; 
+border: 1px solid #456631;
+border-radius: 4px;
+font-size: 16px;
+box-sizing: border-box;
 }
 
-/* Additional styling for new entry form */
+button[type="submit"] {
+width: 100%;
+background-color: #fffadc;
+color: #456631;
+padding: 10px;
+border: none;
+border-radius: 4px;
+font-size: 18px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+margin-top:1rem;
+}
+
+button[type="submit"]:hover {
+background-color: rgb(126,126,126);
+color: #fff;
+}
+
+/* end login*/
+
+/* footer */
+
+.footer{
+  background-color: #fffadc;
+  color: #456631;
+  padding: 2rem;
+  border-radius: 2rem;
+  margin-top: 2rem;
+}
+
+/* end footer */
+
+
+/* AARON EDITS */
+/* Grid Layout for Item Cards */
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.item-card {
+  border: 1px solid #456631;
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+
+.item-card:hover {
+  transform: scale(1.02);
+}
+
+.item-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+.red {
+  background-color: red !important;
+}
+
+.yellow {
+  background-color: yellow !important;
+}
+
+/* Modal Styles */
+.modal {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+  background-color: #fffadc;
+  margin: 5% auto;
+  padding: 20px;
+  border: 1px solid #456631;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 1rem;
+  position: relative;
+}
+
+.modal-content img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0.5rem;
+  }
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #456631;
+  cursor: pointer;
+}
+
+.graph {
+background-color: #fffadc;
+border-radius: 2rem;
+margin: 2rem;
+padding: 2rem;
+}
+
 .new-entry-section {
   margin: 20px;
   padding: 20px;
