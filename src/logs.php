@@ -22,7 +22,8 @@ if (!isset($_SESSION['username'])) {
                 FROM item_log il
                 JOIN items i ON il.item_id = i.id
                 JOIN users u ON il.user_id = u.id
-                ORDER BY il.action_date DESC";
+                ORDER BY il.action_date DESC
+                ";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
         $logs = $stmt->fetchAll(PDO::FETCH_ASSOC);
