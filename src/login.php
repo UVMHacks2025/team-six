@@ -15,7 +15,7 @@
         <h2>Login</h2>
     </header>
 
-    <main>
+    <main classname="madimi-one-regular">
         <!-- Add this PHP block within the <main> tag in login.php -->
         <?php
         if (isset($_GET['error'])) {
