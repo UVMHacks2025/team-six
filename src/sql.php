@@ -32,7 +32,7 @@ include 'top.php';
     </pre>
 
     <h2>Table to log item transactions</h2>
-    <pre></pre>
+    <pre>
     CREATE TABLE item_log (
         id INT NOT NULL AUTO_INCREMENT,
         item_id INT NOT NULL,
