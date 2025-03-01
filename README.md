@@ -14,7 +14,7 @@ php -S localhost:8000 -t src/
 
 Rally Cat's Cupboard is UVM's on-campus food pantry. Located on the first floor of the Davis Center, it is run by students and available to all members of the UVM community. They receive donations from groups ranging from local grocery stores, to individual donations. 
 
-Rally Cat’s Cupboard needs help streamlining their work and developing an inventory tracking system! Currently, they are keeping track of all their food with a notes app. Your team's goal is to create a robust inventory system that will allow the cupboard to better keep track of their supplies. Feel free to consult the Rally Cat’s Cupboard representatives present to ask more about what they want for their system. Really consider what would be most helpful to them, and easiest to use!
+Rally Cat's Cupboard needs help streamlining their work and developing an inventory tracking system! Currently, they are keeping track of all their food with a notes app. Your team's goal is to create a robust inventory system that will allow the cupboard to better keep track of their supplies. Feel free to consult the Rally Cat’s Cupboard representatives present to ask more about what they want for their system. Really consider what would be most helpful to them, and easiest to use!
 
 Objectives
 Required: 
