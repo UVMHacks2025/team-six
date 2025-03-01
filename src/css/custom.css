@@ -155,6 +155,11 @@ button[type="submit"] {
   cursor: pointer;
 }
 
+button.formsubmit {
+  background-color: #456631;
+  color: white;
+}
+
 button[type="submit"]:hover {
   background-color: rgb(126, 126, 126);
   color: #fff;
