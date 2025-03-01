@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php include 'top.php'; ?>
 
 <main class="madimi-one-regular">
-  <h2>Register</h2>
+  <h2 class="login-text">Register</h2>
   <?php
     if (isset($_GET['error'])) {
       echo '<div class="panel pale-red leftbar border-red">';
@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
     <button type="submit">Register</button>
   </form>
-  <p>
+  <p class="login-text">
     Already have an account? <a href="login.php">Login here</a>
   </p>
 </main>
