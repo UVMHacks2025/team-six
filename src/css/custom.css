@@ -1,8 +1,8 @@
 /* navbar */
 .navbar {
-    background-color: #333;
+    background-color: #fffadc;
     padding: 10px 0;
-    color: #fff;
+    color: #456631;
   }
   
   .navbar .container {
@@ -15,7 +15,7 @@
   }
   
   .nav-logo img {
-    height: 50px;
+    height: 100px;
   }
   
   .nav-menu {
@@ -31,13 +31,13 @@
   
   .nav-menu li a {
     text-decoration: none;
-    color: #fff;
-    font-size: 16px;
+    color: #456631;
+    font-size: 32px;
     transition: color 0.3s ease;
   }
   
   .nav-menu li a:hover {
-    color: #f4f4f4;
+    color:rgb(126, 126, 126);
   }
 
   /* end navbar */
