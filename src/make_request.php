@@ -1,7 +1,9 @@
 <?php include 'top.php'?>
 <main class="home madimi-one-regular">
     <section class="add-request">
-    <!-- <form action="script.php" method="post"> -->
+
+    <form action="add_request.php" id="newRequest" method="POST" class="new-entry-form" enctype="multipart/form-data">
+
     
         <label for="test">Enter your name:</label>
         <input type="text" id="name" required><br><br>
@@ -26,7 +28,7 @@
 
         <label for="items">Choose up to 3 items:</label>
         <br><br>
-        <input list="items" id="item" name="item" required>
+        <input list="items" id="item" name="item1" required>
         <datalist id="items">
             <?php
                 foreach ($food_types as $food_type) {
@@ -35,7 +37,7 @@
             ?>
         </datalist><br><br>
 
-        <input list="items" id="item" name="item"">
+        <input list="items" id="item" name="item2"">
         <datalist id="items">
             <?php
                 foreach ($food_types as $food_type) {
@@ -44,7 +46,7 @@
             ?>
         </datalist><br><br>
 
-        <input list="items" id="item" name="item">
+        <input list="items" id="item" name="item3">
         <datalist id="items">
             <?php
                 foreach ($food_types as $food_type) {
@@ -54,7 +56,7 @@
         </datalist><br><br>
 
         <input type="submit" value="Submit">
-    <!-- </form> -->
+    </form>
     </section>
 </main>
 <?php include 'footer.php'?>

@@ -40,7 +40,7 @@ if (isset($_FILES['image_file']) && $_FILES['image_file']['error'] == UPLOAD_ERR
 $sql = "INSERT INTO items (food_type, quantity, exp_date, allergies, dietary_considerations, image_path, description)
         VALUES (?, ?, ?, ?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([$food_type, $quantity, $exp_date, $allergies, $dietary_considerations, $image_path, $description]);
+$stmt->execute(params: [$food_type, $quantity, $exp_date, $allergies, $dietary_considerations, $image_path, $description]);
 
 // Get the ID of the inserted item
 $item_id = $pdo->lastInsertId();
