@@ -45,7 +45,20 @@ include 'top.php';
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
     </pre>
 
+    <h2>Table for requests</h2>
+    <pre>
+    CREATE TABLE requests (
+        id INT NOT NULL AUTO_INCREMENT,
+        name VARCHAR(255) NOT NULL,
+        email VARCHAR(255) NOT NULL,
+        item1 VARCHAR(100) NOT NULL,
+        item2 VARCHAR(100) DEFAULT NULL,
+        item3 VARCHAR(100) DEFAULT NULL,
+        request_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        PRIMARY KEY (id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+    </pre>
 
 
 </main>
-<?php include '../footer.php'?>
+<?php include 'footer.php'?>
