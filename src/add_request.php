@@ -12,7 +12,5 @@ $item3 = $_POST['item3'];
 $sql = "INSERT INTO requests (name, email, item1, item2, item3)
         VALUES (?, ?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute(params: [$name, $email, $item1, $item2, $item3]);
-
-
-
+$stmt->execute([$name, $email, $item1, $item2, $item3]);
+?>
