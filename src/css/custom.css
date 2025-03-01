@@ -42,7 +42,7 @@ button:hover {
   padding: 2rem;
   border-radius: 2rem;
   margin-top: 2rem;
-  margin-botton: 2rem;
+  margin-bottom: 2rem;
 }
 /* end home page */
 
@@ -105,6 +105,30 @@ color:rgb(126, 126, 126);
 
 /* end navbar */
 
+/* About */
+textarea[name="content"]{
+width: 20em;
+height: 5em;
+}
+#formsubmit{
+background: #456631;
+font-weight: bold;
+color: #fffadc;
+max-width: 20em;
+border-radius: 1em
+}
+/* end About */
+
+/* logs */
+main.logs{
+  background-color: #fffadc;
+  color: #456631;
+  padding: 2rem;
+  border-radius: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+/* end logs */
 
 /* login */
 
@@ -191,6 +215,14 @@ color: #fff;
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
+}
+
+.red {
+  background-color: red !important;
+}
+
+.yellow {
+  background-color: yellow !important;
 }
 
 /* Modal Styles */
@@ -287,19 +319,6 @@ padding: 2rem;
 
 .form-group-full {
   grid-column: span 2;
-}
-
-/* About */
-textarea[name="content"]{
-width: 20em;
-height: 5em;
-}
-#formsubmit{
-background: #456631;
-font-weight: bold;
-color: #fffadc;
-max-width: 20em;
-border-radius: 1em
 }
 
 .food-items-section {
