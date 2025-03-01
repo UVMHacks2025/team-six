@@ -12,7 +12,6 @@
         $stmt->execute();
         $items = $stmt->fetchAll();
 
-        // Prepare arrays for food types and quantities
         $food_types = [];
         $quantities = [];
 
