@@ -32,11 +32,7 @@
             $food_types[] = $item['food_type'];   // Food type (labels)
             $quantities[] = $item['quantity'];    // Quantity (data)
         }
-
-
     ?>
-
-    
 
 <script>
     const ctx = document.getElementById('Item_Stock');
@@ -63,8 +59,6 @@
             }
         }
     });
-
-
 
 </script>
 
