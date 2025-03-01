@@ -6,7 +6,7 @@
   <h2 class="montserrat-regular">Add New Food Item</h2>
   <section class="new-entry-section">
   <?php if (isset($_SESSION['username'])) { ?>
-    <form action="add_item.php" id="newItem" method="POST" class="new-entry-form">
+    <form action="add_item.php" id="newItem" method="POST" class="new-entry-form" enctype="multipart/form-data">
       <h2>New Entry</h2>
       <div class="form-grid">
         <div class="form-group">
@@ -45,7 +45,7 @@
         </div>
         <div class="form-group">
           <label for="image_path">Image Path</label>
-          <input type="text" id="image_path" name="image_path" placeholder="Relative path (e.g., images/beans.jpg)" required>
+          <input type="file" id="image_file" name="image_file" accept="image/*" required>
         </div>
         <div class="form-group form-group-full">
           <label for="description">Description</label>
