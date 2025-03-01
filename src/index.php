@@ -153,79 +153,23 @@
   
     // Open modal on item card click
     document.querySelectorAll('.item-card').forEach(card => {
-        card.addEventListener('click', () => {
-            let item = JSON.parse(card.getAttribute('data-item'));
-            // Store the current item for later use in update calls.
-            window.currentItem = item;
-            
-            modal.style.display = "block";
-            modalImage.src = item.image_path;
-            modalName.textContent = item.food_type;
-            modalDescription.textContent = item.description ? item.description : "";
-            
-            let detailsHTML = "";
-            <?php if (isset($_SESSION['username'])) { ?>
-            detailsHTML += `<li>Quantity: ${item.quantity}</li>`;
-            <?php } ?>
-            detailsHTML += `<li>Expiration Date: ${item.exp_date}</li>`;
-            detailsHTML += `<li>Allergies: ${item.allergies}</li>`;
-            detailsHTML += `<li>Dietary: ${item.dietary_considerations}</li>`;
-            modalDetails.innerHTML = detailsHTML;
-        });
-        });
-    
-    // Function to update quantity via AJAX
-    function updateQuantity(itemId, delta) {
-    fetch("update_quantity.php", {
-        method: "POST",
-        headers: {
-        "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ item_id: itemId, delta: delta })
-    })
-    .then(response => response.json())
-    .then(data => {
-        if(data.success) {
-        // Update the global currentItem with the new quantity
-        window.currentItem.quantity = data.new_quantity;
-        // Optionally update the modal details to reflect the new quantity
-        // (Assuming the quantity is the first list item in modalDetails)
-        modalDetails.innerHTML = `<li>Quantity: ${data.new_quantity}</li>
-            <li>Expiration Date: ${window.currentItem.exp_date}</li>
-            <li>Allergies: ${window.currentItem.allergies}</li>
-            <li>Dietary: ${window.currentItem.dietary_considerations}</li>`;
-        } else {
-        alert("Update failed: " + data.error);
-        }
-    })
-    .catch(err => console.error("Error:", err));
-    }
-
-    // Add event listener for the "Add Quantity" button
-    document.getElementById("addQuantityBtn").addEventListener("click", function() {
-    let addQty = parseInt(prompt("Enter quantity to add:"));
-    if (isNaN(addQty) || addQty <= 0) {
-        alert("Please enter a valid number greater than zero.");
-        return;
-    }
-    updateQuantity(window.currentItem.id, addQty);
+      card.addEventListener('click', () => {
+        let item = JSON.parse(card.getAttribute('data-item'));
+        modal.style.display = "block";
+        modalImage.src = item.image_path;
+        modalName.textContent = item.food_type;
+        modalDescription.textContent = item.description ? item.description : "";
+        let detailsHTML = "";
+        <?php if (isset($_SESSION['username'])) { ?>
+          detailsHTML += `<li>Quantity: ${item.quantity}</li>`;
+        <?php } ?>
+        detailsHTML += `<li>Expiration Date: ${item.exp_date}</li>`;
+        detailsHTML += `<li>Allergies: ${item.allergies}</li>`;
+        detailsHTML += `<li>Dietary: ${item.dietary_considerations}</li>`;
+        modalDetails.innerHTML = detailsHTML;
+      });
     });
-
-    // Add event listener for the "Remove Quantity" button
-    document.getElementById("removeQuantityBtn").addEventListener("click", function() {
-    let removeQty = parseInt(prompt("Enter quantity to remove:"));
-    if (isNaN(removeQty) || removeQty <= 0) {
-        alert("Please enter a valid number greater than zero.");
-        return;
-    }
-    // Optionally check if removeQty exceeds the current quantity before calling updateQuantity
-    if(removeQty > window.currentItem.quantity) {
-        alert("Cannot remove more than available quantity.");
-        return;
-    }
-    updateQuantity(window.currentItem.id, -removeQty);
-    });
-
+  
     // Close modal when the close button is clicked
     document.querySelector('.close').addEventListener('click', () => {
       modal.style.display = "none";
