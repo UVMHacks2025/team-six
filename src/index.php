@@ -3,9 +3,9 @@
   <h1>Rally Cat's Cupboard</h1>
 
   <!-- Add New Food Item Form (only if logged in) -->
+  <?php if (isset($_SESSION['username'])) { ?>
   <h2 class="montserrat-regular">Add New Food Item</h2>
   <section class="new-entry-section">
-  <?php if (isset($_SESSION['username'])) { ?>
     <form action="add_item.php" id="newItem" method="POST" class="new-entry-form" enctype="multipart/form-data">
       <h2>New Entry</h2>
       <div class="form-grid">
@@ -54,9 +54,9 @@
       </div>
       <button type="submit" class="submit-btn">Add Item</button>
     </form>
-  <?php } ?>
-</section>
 
+</section>
+<?php } ?>
 
   <hr>
   
