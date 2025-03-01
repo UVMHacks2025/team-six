@@ -1,6 +1,7 @@
 <?php
 $phpSelf = htmlspecialchars($_SERVER['PHP_SELF']);
 $pathParts = pathinfo($phpSelf);
+session_start();
 ?>
 <!DOCTYPE HTML>
 <html lang="en">
