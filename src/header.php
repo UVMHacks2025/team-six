@@ -1,3 +1,0 @@
-<!-- header.php -->
-    <header>
-    </header>

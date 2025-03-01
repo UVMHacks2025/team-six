@@ -48,6 +48,5 @@ session_start();
     print '<body class="' . $pathParts['filename'] . '">';
     print '<!-- #################   Body element    ################# -->';
     include 'connect-db.php';
-    include 'header.php';
     include 'nav.php';
     ?>
