@@ -1,6 +1,7 @@
 <!-- index.php -->
 <?php include 'top.php'; ?>
-<main class = "index madimi-one-regular">
+<main class="home madimi-one-regular">
+    <h2>Food Items</h2>
     <h1>Rally Cat's Cupboard</h1>
     <!--SEARCH BAR -->
     <section class = "search">
