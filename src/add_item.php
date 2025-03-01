@@ -12,15 +12,14 @@ if (!isset($_SESSION['username'])) {
 $food_type = $_POST['food_type'];
 $quantity = $_POST['quantity'];
 $exp_date = $_POST['exp_date'];
-$location = $_POST['location'];
 $allergies = $_POST['allergies'];
 $dietary_considerations = $_POST['dietary_considerations'];
 
-// Insert new item
-$sql = "INSERT INTO items (food_type, quantity, exp_date, location, allergies, dietary_considerations)
-        VALUES (?, ?, ?, ?, ?, ?)";
+// Insert new item without location
+$sql = "INSERT INTO items (food_type, quantity, exp_date, allergies, dietary_considerations)
+        VALUES (?, ?, ?, ?, ?)";
 $stmt = $pdo->prepare($sql);
-$stmt->execute([$food_type, $quantity, $exp_date, $location, $allergies, $dietary_considerations]);
+$stmt->execute([$food_type, $quantity, $exp_date, $allergies, $dietary_considerations]);
 
 // Get the ID of the inserted item
 $item_id = $pdo->lastInsertId();
