@@ -1,23 +1,12 @@
 <?php include 'top.php'?>
-
-
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
 <body>
 
-    <!-- Item Specific Chart -->
-    <div>
+    <!-- All  -->
+    <div class='graph'>
     <canvas id="Item_Stock"></canvas>
     </div>
 
     <?php 
-
 
         $sql = "SELECT food_type, quantity FROM items";
         $stmt = $pdo->prepare($sql);
@@ -32,11 +21,7 @@
             $food_types[] = $item['food_type'];   // Food type (labels)
             $quantities[] = $item['quantity'];    // Quantity (data)
         }
-
-
     ?>
-
-    
 
 <script>
     const ctx = document.getElementById('Item_Stock');
@@ -63,8 +48,6 @@
             }
         }
     });
-
-
 
 </script>
 

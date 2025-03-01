@@ -16,6 +16,7 @@
               echo '<li><a href="logout.php">Logout</a></li>';
               echo '<li><a href="about.php">About</a></li>';
               echo '<li><a href="analytics.php">Analytics</a></li>';
+              echo '<li><a href="logout.php">Logout</a></li>';
           } else {
               echo '<li><a href="login.php">Login</a></li>';
               echo '<li><a href="register.php">Sign Up</a></li>';
