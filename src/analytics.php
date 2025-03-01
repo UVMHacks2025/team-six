@@ -1,5 +1,6 @@
-
 <?php include 'top.php'?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,23 +11,37 @@
 </head>
 <body>
 
-    <!-- Top 5 -->
+    <!-- Item Specific Chart -->
     <div>
-    <canvas id="myChart"></canvas>
+    <canvas id="Item Stock"></canvas>
     </div>
+
+    <?php 
+
+        $food_type = 'cookies';
+        $sql = "SELECT quantity FROM items WHERE food_type=$food_type";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute();
+        $items = $stmt->fetchAll();
+
+        $quantity = $items['quantity'];
+
+    ?>
+
     
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
-    const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('Item Stock');
+    var foodName = <?php echo $food_type;?>
+    var quantity = <?php echo $quantity;?>
 
     new Chart(ctx, {
         type: 'bar',
         data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: foodName,
         datasets: [{
-            label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            label: '# in stock',
+            data: quantity,
             borderWidth: 1
         }]
         },
