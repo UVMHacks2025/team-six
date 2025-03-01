@@ -1,6 +1,19 @@
 html{
     background-color: #456631;
 }
+.madimi-one-regular {
+    font-family: "Madimi One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+    
+.montserrat-regular {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* home page */
 .home{
     background-color: #fffadc;
@@ -29,12 +42,6 @@ position: absolute;
 left: 5%;
 top: 50%;
 transform: translateY(-50%);
-}
-
-.madimi-one-regular {
-font-family: "Madimi One", serif;
-font-weight: 400;
-font-style: normal;
 }
 
 .navbar .container {

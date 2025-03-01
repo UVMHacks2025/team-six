@@ -2,7 +2,7 @@
 <?php include 'top.php'; ?>
 <main class="home madimi-one-regular">
     <h1>Rally Cat's Cupboard</h1>
-    <h2>Food Items</h2>
+    <h2 class="montserrat-regular">Food Items</h2>
     <!--SEARCH BAR -->
     <section class = "search">
         <input type="text" placeholder="Search..">
@@ -23,7 +23,7 @@
     </select>
     </section>
     
-    <section>
+    <section class="montserrat-regular">
         <?php
         // Assuming session_start() is called in top.php
         if (isset($_SESSION['username'])) {
@@ -75,7 +75,7 @@
         ?>
     </section>
 
-    <section class = "table">
+    <section class = "table montserrat-regular">
     <table>
         <tr>
             <th>Food Type</th>
