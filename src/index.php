@@ -4,7 +4,7 @@
   <h2 class="montserrat-regular">Food Items</h2>
   
   <!-- SEARCH BAR (optional) -->
-  <section class="search">
+  <section id="searchBox">
     <input type="text" placeholder="Search...">
     <select id="filterCategory">
       <option value="">All Categories</option>
