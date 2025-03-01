@@ -5,7 +5,7 @@ include 'connect-db.php';
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Retrieve and sanitize input
     $username = htmlspecialchars(trim($_POST['username']));
-    $password = $_POST['password']; // You can enforce password policies here
+    $password = $_POST['password'];
 
     // Generate salt and hash password
     $salt = bin2hex(random_bytes(32));

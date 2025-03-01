@@ -1,6 +1,4 @@
-/* =====================================================
-   Global Styles & Reset
-===================================================== */
+/* Global Reset */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,9 +16,7 @@ body {
   line-height: 1.6;
 }
 
-/* =====================================================
-   Typography
-===================================================== */
+/* Typography */
 .madimi-one-regular {
   font-family: "Madimi One", serif;
   font-weight: 400;
@@ -31,9 +27,7 @@ body {
   font-weight: 400;
 }
 
-/* =====================================================
-   Buttons
-===================================================== */
+/* Buttons */
 button,
 input[type="submit"] {
   width: 100%;
@@ -50,13 +44,11 @@ input[type="submit"] {
 
 button:hover,
 input[type="submit"]:hover {
-  background-color: rgb(126,126,126);
+  background-color: rgb(126, 126, 126);
   color: #fff;
 }
 
-/* =====================================================
-   Layout Containers
-===================================================== */
+/* Layout Containers */
 .home,
 main.logs {
   background-color: #fffadc;
@@ -67,9 +59,7 @@ main.logs {
   max-width: 1200px;
 }
 
-/* =====================================================
-   Navbar
-===================================================== */
+/* Navbar */
 .navbar {
   background-color: #fffadc;
   color: #456631;
@@ -111,21 +101,18 @@ main.logs {
 }
 
 .nav-menu li a {
-text-decoration: none;
-color: #456631;
-font-size: 32px;
-transition: color 0.3s ease;
-transition: font-size 0.3s ease;
+  text-decoration: none;
+  color: #456631;
+  font-size: 32px;
+  transition: color 0.3s ease, font-size 0.3s ease;
 }
 
 .nav-menu li a:hover {
-color:rgb(126, 126, 126);
-font-size: 2.2em;
+  color: rgb(126, 126, 126);
+  font-size: 2.2em;
 }
 
-/* =====================================================
-   Forms & Input Containers
-===================================================== */
+/* Forms & Input Containers */
 .input-container {
   position: relative;
   margin-bottom: 15px;
@@ -141,37 +128,29 @@ font-size: 2.2em;
 
 .user-input,
 .pass-input {
-width: 100%;
-padding: 10px 10px 10px 40px; 
-border: 1px solid #456631;
-border-radius: 4px;
-font-size: 16px;
-box-sizing: border-box;
+  width: 100%;
+  padding: 10px 10px 10px 40px;
+  border: 1px solid #456631;
+  border-radius: 4px;
+  font-size: 16px;
 }
 
 button[type="submit"] {
-width: 100%;
-background-color: #fffadc;
-color: #456631;
-padding: 10px;
-border: none;
-border-radius: 4px;
-font-size: 18px;
-cursor: pointer;
-transition: background-color 0.3s ease;
-margin-top:1rem;
+  background-color: #fffadc;
+  color: #456631;
+  padding: 10px;
+  border-radius: 4px;
+  font-size: 18px;
+  margin-top: 1rem;
 }
 
 button[type="submit"]:hover {
-background-color: rgb(126,126,126);
-color: #fff;
+  background-color: rgb(126, 126, 126);
+  color: #fff;
 }
 
-/* end login*/
-
-/* footer */
-
-.footer{
+/* Footer */
+.footer {
   background-color: #fffadc;
   color: #456631;
   padding: 2rem;
@@ -179,10 +158,6 @@ color: #fff;
   margin-top: 2rem;
 }
 
-/* end footer */
-
-
-/* AARON EDITS */
 /* Grid Layout for Item Cards */
 .grid-container {
   display: grid;
@@ -206,11 +181,11 @@ color: #fff;
 }
 
 .item-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-  }
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
 
 .red {
   background-color: red !important;
@@ -222,7 +197,7 @@ color: #fff;
 
 /* Modal Styles */
 .modal {
-  display: none; 
+  display: none;
   position: fixed;
   z-index: 1000;
   left: 0;
@@ -230,7 +205,7 @@ color: #fff;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-content {
@@ -245,11 +220,11 @@ color: #fff;
 }
 
 .modal-content img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 0.5rem;
-  }
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
 
 .close {
   position: absolute;
@@ -261,13 +236,15 @@ color: #fff;
   cursor: pointer;
 }
 
+/* Graph & Analytics Section */
 .graph {
-background-color: #fffadc;
-border-radius: 2rem;
-margin: 2rem;
-padding: 2rem;
+  background-color: #fffadc;
+  border-radius: 2rem;
+  margin: 2rem;
+  padding: 2rem;
 }
 
+/* New Entry Form */
 .new-entry-section {
   margin: 20px;
   padding: 20px;
@@ -317,9 +294,7 @@ padding: 2rem;
   grid-column: span 2;
 }
 
-/* =====================================================
-   Data Display Sections
-===================================================== */
+/* Data Display Sections */
 .food-items-section {
   max-width: 800px;
   margin: 0 auto;
@@ -361,28 +336,11 @@ padding: 2rem;
   border-radius: 4px;
 }
 
-
-
-/* =====================================================
-   Graph & Analytics Section
-===================================================== */
-.graph {
-  background-color: #fffadc;
-  border-radius: 2rem;
-  margin: 2rem;
-  padding: 2rem;
-}
-
-/* =====================================================
-   Responsive Adjustments (if needed)
-===================================================== */
-/* You can add additional media queries below to adjust spacing/fonts for smaller screens */
-
+/* Responsive Adjustments */
 @media (max-width: 600px) {
   .nav-menu li a {
     font-size: 24px;
   }
-
   .new-entry-form h2,
   .section-title {
     font-size: 1.5em;
