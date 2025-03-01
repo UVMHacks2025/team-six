@@ -55,7 +55,7 @@
             ?>
         </datalist><br><br>
 
-        <input type="submit" value="Submit">
+        <input class="formsubmit" type="submit" value="Submit">
     </form>
     </section>
 </main>
