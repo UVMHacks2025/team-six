@@ -1,5 +1,5 @@
 <?php
-include '../top.php';
+include 'top.php';
 ?>
 <main>
     <h2>Create Table Users</h2>
