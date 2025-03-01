@@ -1,21 +1,47 @@
+html{
+    background-color: #456631;
+}
+.madimi-one-regular {
+    font-family: "Madimi One", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+    
+.montserrat-regular {
+    font-family: "Montserrat", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
 /* home page */
 .home{
     background-color: #fffadc;
     color: #456631;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+    margin-botton: 2rem;
 }
 /* end home page */
 
 /* navbar */
 .navbar {
 background-color: #fffadc;
-padding: 10px 0;
 color: #456631;
+padding: 2rem;
+border-radius: 2rem;
+margin-top: 2rem;
+margin-bottom: 2rem;
+position: relative;
+padding-left: 20px; 
 }
 
-.madimi-one-regular {
-font-family: "Madimi One", serif;
-font-weight: 400;
-font-style: normal;
+.nav-logo {
+position: absolute;
+left: 5%;
+top: 50%;
+transform: translateY(-50%);
 }
 
 .navbar .container {
@@ -27,6 +53,7 @@ justify-content: space-between;
 align-items: center;
 }
 
+
 .nav-logo img {
 height: 100px;
 }
@@ -36,10 +63,12 @@ list-style: none;
 margin: 0;
 padding: 0;
 display: flex;
+margin-left: auto;
 }
 
 .nav-menu li {
 margin-left: 20px;
+
 }
 
 .nav-menu li a {
@@ -98,3 +127,15 @@ background-color: rgb(126,126,126);
 }
 
 /* end login*/
+
+/* footer */
+
+.footer{
+    background-color: #fffadc;
+    color: #456631;
+    padding: 2rem;
+    border-radius: 2rem;
+    margin-top: 2rem;
+}
+
+/* end footer */

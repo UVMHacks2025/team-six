@@ -9,10 +9,12 @@
     <title>Document</title>
 </head>
 <body>
+
+    <!-- Top 5 -->
     <div>
     <canvas id="myChart"></canvas>
     </div>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
@@ -37,6 +39,15 @@
         }
     });
     </script>
+
+
+    <!-- Bottom 5 -->
+
+
+
+    <!-- Dynamic Item Sell Chart -->
+
+
 
     
 </body>
