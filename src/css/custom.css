@@ -97,10 +97,12 @@ text-decoration: none;
 color: #456631;
 font-size: 32px;
 transition: color 0.3s ease;
+transition: font-size 0.3s ease;
 }
 
 .nav-menu li a:hover {
 color:rgb(126, 126, 126);
+font-size: 2.5em;
 }
 
 /* end navbar */
