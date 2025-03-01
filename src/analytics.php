@@ -8,7 +8,6 @@
 
     <?php 
 
-
         $sql = "SELECT food_type, quantity FROM items";
         $stmt = $pdo->prepare($sql);
         $stmt->execute();
