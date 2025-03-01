@@ -11,5 +11,4 @@ $username = $_ENV['DBUSER'];
 $password = $_ENV['DBPASS'];
 
 $pdo = new PDO($dsn, $username, $password);
-if ($pdo) print '<!-- Connection complete -->';
 ?>
