@@ -7,7 +7,7 @@
         <input type="email" id="email" name="email" required><br><br>
 
 
-        <?php 
+        <?php
             $sql = "SELECT food_type FROM items";
             $stmt = $pdo->prepare($sql);
             $stmt->execute();
