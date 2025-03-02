@@ -27,6 +27,6 @@ Items Requested:\n
 3. $item3\n";
 
 
-mail($email, $subject, $message, );
+mail($email, $subject, $message);
 header("Location: make_request.php");
 ?>
